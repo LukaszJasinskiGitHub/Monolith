@@ -7,6 +7,7 @@ import { RoutesVars } from "./constants/constRoutes";
 import "./App.css";
 
 const UnitAlfaMonitoring = lazy(() => import("../src/components/unit-alfa-monitoring"));
+const UnitBetaMonitoring = lazy(() => import("../src/components/unit-beta-monitoring"));
 
 const UnitAlfaControl = lazy(() => import("../src/components/unit-alfa-control"));
 
@@ -32,6 +33,7 @@ const App = () => {
                   <Typography variant="h2">Panel Monitorowania</Typography>
                   <Stack flexDirection="row" alignItems="center" justifyContent="center" flexWrap="wrap">
                     <UnitAlfaMonitoring />
+                    <UnitBetaMonitoring />
                   </Stack>
                 </Stack>
 
