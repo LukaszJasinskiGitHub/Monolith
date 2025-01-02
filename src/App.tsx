@@ -10,6 +10,7 @@ const UnitAlfaMonitoring = lazy(() => import("../src/components/unit-alfa-monito
 const UnitBetaMonitoring = lazy(() => import("../src/components/unit-beta-monitoring"));
 
 const UnitAlfaControl = lazy(() => import("../src/components/unit-alfa-control"));
+const UnitBetaControl = lazy(() => import("../src/components/unit-beta-control"));
 
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
                   <Typography variant="h2">Panel Sterowania</Typography>
                   <Stack flexDirection="row" alignItems="center" justifyContent="center" flexWrap="wrap">
                     <UnitAlfaControl />
+                    <UnitBetaControl />
                   </Stack>
                 </Stack>
               </Box>
