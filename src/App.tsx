@@ -8,6 +8,9 @@ import "./App.css";
 
 const UnitAlfaMonitoring = lazy(() => import("../src/components/unit-alfa-monitoring"));
 
+const UnitAlfaControl = lazy(() => import("../src/components/unit-alfa-control"));
+
+
 const App = () => {
   const MissingRoute = () => <Navigate to={{ pathname: RoutesVars.HOME }} replace />;
 
@@ -35,7 +38,7 @@ const App = () => {
                 <Stack flexDirection="column" alignItems="center" sx={{ mt: 8 }}>
                   <Typography variant="h2">Panel Sterowania</Typography>
                   <Stack flexDirection="row" alignItems="center" justifyContent="center" flexWrap="wrap">
-                    {/* Control Panel Placeholder*/}
+                    <UnitAlfaControl />
                   </Stack>
                 </Stack>
               </Box>
