@@ -10,6 +10,7 @@ const UnitAlfaMonitoring = lazy(() => import("../src/components/unit-alfa-monito
 const UnitBetaMonitoring = lazy(() => import("../src/components/unit-beta-monitoring"));
 const UnitGammaMonitoring = lazy(() => import("../src/components/unit-gamma-monitoring"));
 const UnitDeltaMonitoring = lazy(() => import("../src/components/unit-delta-monitoring"));
+const UnitEpsilonMonitoring = lazy(() => import("../src/components/unit-epsilon-monitoring"));
 
 const UnitAlfaControl = lazy(() => import("../src/components/unit-alfa-control"));
 const UnitBetaControl = lazy(() => import("../src/components/unit-beta-control"));
@@ -37,8 +38,9 @@ const App = () => {
                   <Typography variant="h2">Panel Monitorowania</Typography>
                   <Stack flexDirection="row" alignItems="center" justifyContent="center" flexWrap="wrap">
                     <UnitAlfaMonitoring />
-                    <UnitBetaMonitoring />
                     <UnitGammaMonitoring />
+                    <UnitEpsilonMonitoring />
+                    <UnitBetaMonitoring />
                     <UnitDeltaMonitoring />
                   </Stack>
                 </Stack>
@@ -47,8 +49,8 @@ const App = () => {
                   <Typography variant="h2">Panel Sterowania</Typography>
                   <Stack flexDirection="row" alignItems="center" justifyContent="center" flexWrap="wrap">
                     <UnitAlfaControl />
-                    <UnitBetaControl />
                     <UnitGammaControl />
+                    <UnitBetaControl />
                   </Stack>
                 </Stack>
               </Box>
