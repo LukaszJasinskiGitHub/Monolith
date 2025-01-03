@@ -9,6 +9,7 @@ import "./App.css";
 const UnitAlfaMonitoring = lazy(() => import("../src/components/unit-alfa-monitoring"));
 const UnitBetaMonitoring = lazy(() => import("../src/components/unit-beta-monitoring"));
 const UnitGammaMonitoring = lazy(() => import("../src/components/unit-gamma-monitoring"));
+const UnitDeltaMonitoring = lazy(() => import("../src/components/unit-delta-monitoring"));
 
 const UnitAlfaControl = lazy(() => import("../src/components/unit-alfa-control"));
 const UnitBetaControl = lazy(() => import("../src/components/unit-beta-control"));
@@ -38,6 +39,7 @@ const App = () => {
                     <UnitAlfaMonitoring />
                     <UnitBetaMonitoring />
                     <UnitGammaMonitoring />
+                    <UnitDeltaMonitoring />
                   </Stack>
                 </Stack>
 
