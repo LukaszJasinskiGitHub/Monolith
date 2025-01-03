@@ -15,6 +15,7 @@ const UnitEpsilonMonitoring = lazy(() => import("../src/components/unit-epsilon-
 const UnitAlfaControl = lazy(() => import("../src/components/unit-alfa-control"));
 const UnitBetaControl = lazy(() => import("../src/components/unit-beta-control"));
 const UnitGammaControl = lazy(() => import("../src/components/unit-gamma-control"));
+const UnitEpsilonControl = lazy(() => import("../src/components/unit-epsilon-control"));
 
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
                   <Stack flexDirection="row" alignItems="center" justifyContent="center" flexWrap="wrap">
                     <UnitAlfaControl />
                     <UnitGammaControl />
+                    <UnitEpsilonControl />v
                     <UnitBetaControl />
                   </Stack>
                 </Stack>
