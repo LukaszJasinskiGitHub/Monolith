@@ -5,6 +5,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { RoutesVars } from "./constants/constRoutes";
 
 import "./App.css";
+import NavigationBar from "./components/shared/NavigationBar";
 
 const UnitAlfaMonitoring = lazy(() => import("../src/components/unit-alfa-monitoring"));
 const UnitBetaMonitoring = lazy(() => import("../src/components/unit-beta-monitoring"));
@@ -24,12 +25,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Box component="section" flexDirection="column" sx={{ maxWidth: 1900, m: "0 auto" }}>
-        {/* Navigation Placeholder */}
+        <NavigationBar />
 
         <Suspense fallback={
           <Box sx={{ margin: 20 }} display="flex" alignItems="center" flexDirection="column">
             <LinearProgress sx={{ mb: 3, width: "100%", height: 10 }} />
-            <Typography gutterBottom variant="h2" component="div">Ładowanie Microfrontendu...</Typography>
+            <Typography gutterBottom variant="h2" component="div">Ładowanie Aplikacji...</Typography>
           </Box>
         }>
           <Routes>

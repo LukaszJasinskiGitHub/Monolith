@@ -75,7 +75,7 @@ export default function Chart() {
           />
 
           <Line
-            name="Generacja [kW]"
+            name="Generacja fotowoltaiczna PV [kW]"
             dataKey={ParsedDataKeys.GENERATION}
             stroke="#82ca9d"
             type={lineType}
@@ -93,7 +93,7 @@ export default function Chart() {
           />
 
           <Line
-            name="Magazyn [kW]"
+            name="Magazyn energii [kW]"
             dataKey={ParsedDataKeys.CHARGE_LEVEL}
             stroke="#ffc658"
             type={lineType}
@@ -119,11 +119,11 @@ export default function Chart() {
           </Typography>
 
           <Typography sx={{ pb: 1, fontSize: 18 }}>
-            Generacja fotowoltaiczna: <strong>12 kWp</strong>
+            Generacja fotowoltaiczna PV: <strong>12 kWp</strong>
           </Typography>
 
           <Typography sx={{ pb: 1, fontSize: 18 }}>
-            Bateryjny magazyn: <strong>5 kWh / 2 kW</strong>
+            Bateryjny magazyn energii: <strong>5 kWh / 2 kW</strong>
           </Typography>
         </Stack>
       </Typography>
