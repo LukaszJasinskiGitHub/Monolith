@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { Typography, Box } from "@mui/material";
+import React, { useEffect, useMemo, useState, FC } from "react";
+import { Typography, Box, Button } from "@mui/material";
 import Papa from "papaparse";
 
 import ControlTable from "./Table";
@@ -17,9 +17,20 @@ export interface ParsedDataInterface {
   chargeLevel: string | number;
 }
 
+export interface UnitAlfaControlProps {
+  simulateError?: boolean;
+}
 
-const UnitAlfaControl = () => {
+const UnitAlfaControl: FC<UnitAlfaControlProps> = ({ simulateError }) => {
   const [parsedData, setParsedData] = useState<ParsedDataInterface[]>([]);
+  const [throwError, setThrowError] = useState(false)
+
+  const handleSimulateError = () => {
+    setThrowError(true)
+  }
+
+  if (throwError) { throw new Error('Błąd w komponencie unit-alfa-control!'); }
+
 
   useEffect(() => {
     Papa.parse(dataControl, {
@@ -62,6 +73,15 @@ const UnitAlfaControl = () => {
       </Typography>
 
       {tableRows && <ControlTable tableRows={tableRows} />}
+
+      {simulateError && (<Button
+        variant='contained'
+        color="error"
+        sx={{ mx: 1, mt: 3 }}
+        onClick={handleSimulateError}
+      >
+        Symuluj awarię komponentu
+      </Button>)}
     </Box>
   );
 };

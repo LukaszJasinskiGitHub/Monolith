@@ -6,6 +6,7 @@ import { RoutesVars } from "./constants/constRoutes";
 
 import "./App.css";
 import NavigationBar from "./components/shared/NavigationBar";
+import ErrorSimulation from "./pages/ErrorSimulation";
 
 const UnitAlfaMonitoring = lazy(() => import("../src/components/unit-alfa-monitoring"));
 const UnitBetaMonitoring = lazy(() => import("../src/components/unit-beta-monitoring"));
@@ -58,6 +59,7 @@ const App = () => {
                 </Stack>
               </Box>
             } />
+            <Route path={RoutesVars.ERROR_SIMULATION} element={<ErrorSimulation key="ErrorSimulation" />} />
             <Route path="*" element={<MissingRoute />} />
           </Routes>
         </Suspense>

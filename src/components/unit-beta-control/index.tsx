@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { Typography, Box } from "@mui/material";
+import React, { FC, useEffect, useMemo, useState } from "react";
+import { Typography, Box, Button } from "@mui/material";
 import Papa from "papaparse";
 
 import ControlTable from "./Table";
@@ -16,9 +16,19 @@ export interface ParsedDataInterface {
   setCharge: string | number;
 }
 
+export interface UnitBetaControlProps {
+  simulateError?: boolean;
+}
 
-const UnitBetaControl = () => {
+const UnitBetaControl: FC<UnitBetaControlProps> = ({ simulateError }) => {
   const [parsedDataAll, setParsedDataAll] = useState<ParsedDataInterface[]>([]);
+  const [throwError, setThrowError] = useState(false)
+
+  const handleSimulateError = () => {
+    setThrowError(true)
+  }
+
+  if (throwError) { throw new Error('Błąd w komponencie unit-beta-control!'); }
 
   useEffect(() => {
     Papa.parse(dataControl, {
@@ -59,6 +69,15 @@ const UnitBetaControl = () => {
       </Typography>
 
       {tableRows && <ControlTable tableRows={tableRows} />}
+
+      {simulateError && (<Button
+        variant='contained'
+        color="error"
+        sx={{ mx: 1, mt: 3 }}
+        onClick={handleSimulateError}
+      >
+        Symuluj awarię komponentu
+      </Button>)}
     </Box>
   );
 };
